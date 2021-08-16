@@ -14,7 +14,7 @@ python3.10 tradutor_mt/tradutor.py
 A saída estará no arquivo data/saida.out. 
 
 ## Restrições
-O tradutor utiliza alguns estados auxiliares, assim, o programa de entrada não pode esses mesmos estados, são eles:
+O tradutor utiliza alguns estados auxiliares, assim, o programa de entrada não pode ter esses mesmos estados, são eles:
 
     - estado_inicio_novo
     - estado_insercao_inicio

@@ -1,0 +1,3 @@
+QUALQUER_COISA = "*"
+
+BRANCO = "_"

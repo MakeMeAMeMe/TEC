@@ -1,0 +1,3 @@
+ESQUERDA = "l"
+
+DIREITA = "r"

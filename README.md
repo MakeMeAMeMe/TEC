@@ -4,12 +4,24 @@ Autor: Otávio Almeida
 ## Instruções
 O projeto requer a utilização de Python 3.9, ou mais recente, sendo que foi desenvolvido em Python 3.10.
 
+As intruções assumem que são executadas na pasta raiz do projeto.
+
+#### Forma 1
 Coloque a entrada no arquivo data/entrada.in
 
 Rode com o comando:
 ```bash
-python3.10 tradutor_mt/tradutor.py
+python3 tradutor_mt/tradutor.py
 ```
+
+#### Forma 2
+Rode com o comando:
+
+```bash
+python3 tradutor_mt/tradutor.py {caminho_para_arquivo_de_entrada.in}
+```
+
+Onde {caminho_para_arquivo_de_entrada.in} deve ser subtituido pelo caminho para o arquivo de entrada.
 
 A saída estará no arquivo data/saida.out. 
 

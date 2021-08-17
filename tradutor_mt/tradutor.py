@@ -7,10 +7,18 @@ from estados import (
     ESTADO_ESTACIONARIO, ESTADO_INICIAL_NOVO, ESTADO_INICIAL_REAL, ESTADO_INSERCAO_FINAL0, ESTADO_INSERCAO_FINAL1, ESTADO_INSERCAO_FINAL2, ESTADO_INSERSAO_INICIO)
 from typing import List
 
+from sys import argv
 
-def read_file(fp: str) -> List[str]:
-    with Path(fp).open("r") as file:
+
+def read_file(fp: Path) -> List[str]:
+    with fp.open("r") as file:
         return file.readlines()
+
+def file_exists(fp: str) -> Path:
+    path = Path(fp)
+    if path.is_file():
+        return path
+    raise Exception("File not found")
 
 
 def save_file(fp: str, content: List[str]) -> None:
@@ -112,10 +120,15 @@ def simular_operacao_fim_da_fita(estado_atual: str):
 
 
 def main():
+    if len(argv) == 1:
+        fp = argv[0]
+    else:
+        fp = "./data/entrada.in"
+    file = file_exists(fp)
     operacoes: List[str] = list()
     operacoes.extend(simulador_fita_ui_para_di())
     operacoes.extend(simulador_fita_limitador_fim())
-    unparsed_content = read_file("./data/entrada.in")
+    unparsed_content = read_file(file)
     operacoes.extend(parse_all(unparsed_content))
     save_file("./data/saida.out", operacoes)
 
